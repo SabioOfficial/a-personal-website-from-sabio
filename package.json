@@ -1,0 +1,16 @@
+{
+  "name": "a-personal-website-from-sabio",
+  "version": "1.0.0",
+  "description": "a personal website from sabio, by sabio and for sabio",
+  "license": "GPL-3.0-or-later",
+  "author": "Sabio Tang",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "path": "^0.12.7"
+  }
+}

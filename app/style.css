@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    font-family: 'National Park', sans-serif;
+}
+
+button {
+    font-family: 'National Park', sans-serif;
+    backdrop-filter: blur(8px) brightness(50%);
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 8px 12px;
+}
+
+h2 {
+    margin: 8px 0;
+    font-size: 2rem;
+}
+
+p {
+    margin: 4px 0;
+}
+
+.layout-container__div {
+    display: flex;
+    flex-direction: column;
+}
+
+.introduction__div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: repeat url("assets/el-gato.webp");
+    padding: 32px 0;
+    color: white;
+    text-align: center;
+}
+
+.introduction__div > h1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: 3rem;
+    margin: 8px 0;
+    padding: 0 12px;
+    backdrop-filter: blur(8px) brightness(50%);
+}
+
+.introduction__div > p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 0 12px;
+    backdrop-filter: blur(8px) brightness(50%);
+}
+
+.introduction__div > p > a {
+    color: rgb(255, 174, 0);
+}
+
+.badge__div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    gap: 8px;
+    margin: 4px 0;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    backdrop-filter: blur(8px) brightness(50%);
+}
+
+.badge__div > p {
+    margin: 0;
+}
+
+.about-me__div {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 48px;
+    background: black;
+    padding: 64px 25dvw;
+    color: white;
+    text-align: left;
+}
+
+.about-me__div > div > h2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.about-me__div > div > p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-me__div *:not(.dvd-logo) {
+    position: relative;
+    z-index: 1;
+}
+
+.dvd-logo {
+    position: absolute;
+    width: 128px;
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ate-your-cursor__div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: repeat url("assets/clash-royale-heheheha.gif");
+    padding: 32px 0;
+    color: white;
+}
+
+.ate-your-cursor__div > h2, .ate-your-cursor__div > p {
+    padding: 0 12px;
+    backdrop-filter: blur(8px) brightness(50%);
+}
+
+.next-page__div {
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: repeat url("assets/spongebob-sad.webp");
+    background-size: auto 50%;
+}
