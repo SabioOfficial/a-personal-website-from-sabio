@@ -14,10 +14,10 @@ export default function Home() {
         <h1 className="text-[15vw]/[0.78] h-fit">sabio</h1>
         <p className="text-[1.5vw]">(official)</p>
       </div>
-      <div className="flex flex-col gap-[2dvh] [&>div]:text-left [&>div]:flex [&>div]:flex-row [&>div]:gap-6 [&>div]:ml-auto [&>div]:mr-auto">
+      <div className="flex flex-col gap-[2dvh] [&>div]:text-left [&>div]:flex [&>div]:flex-row [&>div]:gap-6 [&>div]:ml-auto [&>div]:mr-auto [&>div]:w-[70dvw]">
         <div>
-          <h2 className="text-4xl text-center">Who is bro?</h2>
-          <div className="flex flex-col mt-1 w-[50dvw]">
+          <h2 className="text-4xl whitespace-nowrap">Who is bro?</h2>
+          <div className="flex flex-col mt-1 grow">
             <p>
               I'm Sabio (Official, not the doppelgänger), an <del className="decoration-2">un</del>professional full stack web developer, extremely&nbsp;
               <del>horrible</del> good game developer, and a <del>ass</del> awesome modder for&nbsp;
@@ -34,6 +34,15 @@ export default function Home() {
               I am able to use&nbsp;
               <img src="figma.png" className="inline h-5 align-text-bottom" /> Figma for UI design with ease and&nbsp;
               <img src="godot.png" className="inline h-5 align-text-bottom" /> Godot for game development somewhat well.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h2 className="text-4xl whitespace-nowrap">Hobbies & Shi</h2>
+          <div className="flex flex-col mt-1 w-[50dvw]">
+            <p>
+              I spend all day either gaming or coding, you will NOT be finding me outs*de. I mainly play Counter-Strike 2 (all hail Lord GabeN), osu
+              (mostly osu!mania), Palworld (enslaving pokemon!), ARK: Survival Evolved (same amount of bugs as all my projects!), and a lot more.
             </p>
           </div>
         </div>
