@@ -25,7 +25,7 @@ export default function ProjectCard({ title, description, authorNote, github, de
           </div>
           {role && <h3 className="text-2xl">{title} <span className="text-sm">{role}</span></h3>}
           {!role && <h3 className="text-2xl">{title} <span className="text-sm text-gray-300">Independent Project</span></h3>}
-          <p className="text-gray-500 font-medium text-sm">Developer's Note: {authorNote}</p>
+          {authorNote && <p className="text-gray-500 font-medium text-sm">Developer's Note: {authorNote}</p>}
           <p className="text-gray-700 font-bold">{description}</p>
         </div>
       </div>
