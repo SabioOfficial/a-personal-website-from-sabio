@@ -1,4 +1,5 @@
 import type { Route } from "./+types/home";
+import PopHorizontalLine from "~/components/horizontal_line";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -14,7 +15,7 @@ export default function Home() {
         <h1 className="text-[15vw]/[0.78] h-fit">sabio</h1>
         <p className="text-[1.5vw]">(official)</p>
       </div>
-      <div className="flex flex-col gap-[2dvh] [&>div]:text-left [&>div]:flex [&>div]:flex-row [&>div]:gap-6 [&>div]:ml-auto [&>div]:mr-auto [&>div]:w-[70dvw]">
+      <div className="flex flex-col gap-[6dvh] [&>div]:text-left [&>div]:flex [&>div]:flex-row [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[70dvw]">
         <div>
           <h2 className="text-4xl whitespace-nowrap">Who is bro?</h2>
           <div className="flex flex-col mt-1 grow">
@@ -37,14 +38,25 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div>
-          <h2 className="text-4xl whitespace-nowrap">Hobbies & Shi</h2>
+        <PopHorizontalLine />
+        <div className="text-right">
           <div className="flex flex-col mt-1 w-[50dvw]">
             <p>
-              I spend all day either gaming or coding, you will NOT be finding me outs*de. I mainly play Counter-Strike 2 (all hail Lord GabeN), osu
-              (mostly osu!mania), Palworld (enslaving pokemon!), ARK: Survival Evolved (same amount of bugs as all my projects!), and a lot more.
+              I spend all day either gaming or coding, you will NOT be finding me outs*de. I mainly play&nbsp;
+              <img src="cs2.jpg" className="inline h-5 align-text-bottom" /> Counter-Strike 2 (all hail Lord GabeN),&nbsp;
+              <img src="osu.png" className="inline h-5 align-text-bottom" /> osu (mostly osu!mania),&nbsp;
+              <img src="palworld.png" className="inline h-5 align-text-bottom" /> Palworld (enslaving pokemon!),&nbsp;
+              <img src="ark.png" className="inline h-5 align-text-bottom" /> ARK: Survival Evolved (same amount of bugs as all my projects!),&nbsp;
+              <img src="minecraft.png" className="inline h-5 align-text-bottom" /> Minecraft (obviously, as a modder), and more!<br />
+              <br /> I also like working on websites (like this one!) and web extensions (check out my modular, quality of life extension&nbsp;
+              <img src="exterstellar.png" className="inline h-5 align-text-bottom" /> Exterstellar!). Doomscrolling is my passion.
             </p>
           </div>
+          <h2 className="text-4xl whitespace-nowrap">Hobbies & Shi</h2>
+        </div>
+        <PopHorizontalLine />
+        <div className="justify-center">
+          <h2 className="text-center text-4xl whitespace-nowrap">Projects</h2>
         </div>
       </div>
     </main>
