@@ -1,6 +1,7 @@
 import type { Route } from "./+types/home";
 import PopHorizontalLine from "~/components/horizontal_line";
 import { MoveUpRight } from 'lucide-react';
+import ProjectCard from "~/components/project_card";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -61,21 +62,92 @@ export default function Home() {
             <h2 className="text-center text-4xl whitespace-nowrap">Projects</h2>
             <p>Here's the list of all the cool projects i've worked on</p>
           </div>
-          <div>
-            <div className="bg-gray-200 px-[2dvw] py-[2dvh] rounded-xl flex flex-row">
-              <div className="flex flex-row gap-2">
-                <img src="exterstellar.png" className="h-8" />
-                <div className="flex flex-col">
-                  <h3 className="text-2xl">Exterstellar</h3>
-                  <p className="text-gray-700 font-bold">A plugin based quality-of-life browser extension for Stardance.</p>
-                </div>
-              </div>
-              <div className="flex flex-row ml-auto my-auto">
-                <a className="cursor-pointer bg-gray-300 rounded-full p-1.5" href="https://exterstellar.space/" target="_blank">
-                  <MoveUpRight size={20} />
-                </a>
-              </div>
-            </div>
+          <div className="flex flex-col gap-2">
+            <ProjectCard
+              title="Exterstellar"
+              description="A plugin based quality-of-life browser extension for Stardance."
+              authorNote="A spiritual successor to my first initial attempt at a modular browser extension, Macondo+."
+              github="https://github.com/Team-Exterstellar/Exterstellar"
+              demo="https://exterstellar.space/"
+              icon="exterstellar.png"
+              role="Director + Lead Developer"
+            />
+            <ProjectCard
+              title="A Personal Website From Sabio"
+              description="the real, official website for sabio. no uranium included"
+              authorNote="You're on it right now!"
+              github="https://github.com/SabioOfficial/a-personal-website-from-sabio"
+              demo="https://sabiothe.dev/"
+              wip={true}
+            />
+            <ProjectCard
+              title="More Weapons (Polymer)"
+              description="A fully server-side mod that adds new & unique weapons + combat related content to the game!"
+              authorNote="First time working with Polymer + making more than a YouTube short about it!"
+              github="https://github.com/SabioOfficial/more-weapons"
+              wip={true}
+              releaseDate="2026"
+            />
+            <ProjectCard
+              title="Wands of Combat"
+              description="A sick wand mod with a mana system!"
+              authorNote="Receiving content updates on a non-regular basis"
+              github="https://github.com/SabioOfficial/wandsofcombat"
+              demo="https://modrinth.com/mod/wandsofcombat"
+              icon="https://cdn.modrinth.com/data/PfI69WTw/44930ee8094083fddcde2065b4e1dc8e0ad24375.gif"
+            />
+            <ProjectCard
+              title="Abyssium"
+              description="Making The End worthwhile. That’s Abyssium."
+              authorNote="My first Minecraft mod. It's peak."
+              github="https://github.com/SabioOfficial/abyssium"
+              demo="https://modrinth.com/mod/abyssium"
+              icon="https://cdn.modrinth.com/data/nDxAwnzY/c593e5989fc4ccc99d88e9893c3ecaa30ce67e03_96.webp"
+            />
+            <ProjectCard
+              title="Quirky Chess Engine"
+              description="A chess engine with toggleable rules & modded chess rules."
+              github="https://github.com/SabioOfficial/Quirky-Chess-Engine"
+              demo="https://qce.archived.sabiothe.dev/"
+              icon="https://qce.archived.sabiothe.dev/public/Logo.png"
+            />
+            <ProjectCard
+              title="Maximine"
+              description="maximize your dopamine levels with this idler game"
+              authorNote="'Do you like dopamine?' -Maximine Trailer"
+              github="https://github.com/SabioOfficial/maximine"
+              demo="https://sabioofficial.itch.io/maximine"
+              icon="https://img.itch.zone/aW1nLzI4NDc1MTE5LnBuZw==/32x32%23/3uyd75.png"
+            />
+            <ProjectCard
+              title="Modirena"
+              description="A server-side mod with an arena with a special twist: you can choose between 3 effects that stack every round."
+              authorNote="This mod was sponsored by my friend's building skills!"
+              github="https://github.com/SabioOfficial/modirena"
+            />
+            <ProjectCard
+              title="Macondo+"
+              description="Macondo+ is a QoL-focused browser extension that improves the Macondo website."
+              authorNote="My first time making a module based browser extension."
+              github="https://github.com/SabioOfficial/MacondoPlus"
+              demo="https://macondoplus.sabiothe.dev/"
+              icon="macondo_plus.png"
+            />
+            <ProjectCard
+              title="Voxl"
+              description="A plugin based quality of life browser extension for Pixl."
+              authorNote="On indefinite development pause."
+              github="https://github.com/SabioOfficial/voxl"
+              icon="https://github.com/SabioOfficial/voxl/raw/refs/heads/main/docs/public/favicon.ico"
+              wip={true}
+            />
+            <ProjectCard
+              title="XtensionAPI"
+              description="An API that allows browser extensions to easily have a plugin system."
+              authorNote="On indefinite development pause."
+              github="https://github.com/SabioOfficial/XtensionAPI"
+              wip={true}
+            />
           </div>
         </div>
       </div>
