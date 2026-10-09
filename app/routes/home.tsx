@@ -62,7 +62,7 @@ export default function Home() {
             <p>Here's the list of all the cool projects i've worked on</p>
           </div>
           <div>
-            <div className="bg-gray-200 px-[2dvw] py-[2dvh] rounded-xl">
+            <div className="bg-gray-200 px-[2dvw] py-[2dvh] rounded-xl flex flex-row">
               <div className="flex flex-row gap-2">
                 <img src="exterstellar.png" className="h-8" />
                 <div className="flex flex-col">
@@ -70,8 +70,10 @@ export default function Home() {
                   <p className="text-gray-700 font-bold">A plugin based quality-of-life browser extension for Stardance.</p>
                 </div>
               </div>
-              <div className="flex flex-row">
-                <MoveUpRight />
+              <div className="flex flex-row ml-auto my-auto">
+                <a className="cursor-pointer bg-gray-300 rounded-full p-1.5" href="https://exterstellar.space/" target="_blank">
+                  <MoveUpRight size={20} />
+                </a>
               </div>
             </div>
           </div>
