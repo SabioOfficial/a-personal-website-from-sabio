@@ -18,6 +18,7 @@ export default function Home() {
         <p className="text-[1.5vw]">(official)</p>
       </div>
       <div className="flex flex-col gap-[6dvh] [&>div]:text-left [&>div]:flex [&>div]:flex-row [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[70dvw]">
+        <PopHorizontalLine />
         <div className="px-[2dvw]">
           <h2 className="text-4xl whitespace-nowrap">Who is bro?</h2>
           <div className="flex flex-col mt-1 grow">
