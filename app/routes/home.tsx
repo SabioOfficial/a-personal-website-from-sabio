@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 import PopHorizontalLine from "~/components/horizontal_line";
+import { MoveUpRight } from 'lucide-react';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -16,7 +17,7 @@ export default function Home() {
         <p className="text-[1.5vw]">(official)</p>
       </div>
       <div className="flex flex-col gap-[6dvh] [&>div]:text-left [&>div]:flex [&>div]:flex-row [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[70dvw]">
-        <div>
+        <div className="px-[2dvw]">
           <h2 className="text-4xl whitespace-nowrap">Who is bro?</h2>
           <div className="flex flex-col mt-1 grow">
             <p>
@@ -39,8 +40,8 @@ export default function Home() {
           </div>
         </div>
         <PopHorizontalLine />
-        <div className="text-right">
-          <div className="flex flex-col mt-1 w-[50dvw]">
+        <div className="text-right justify-end px-[2dvw]">
+          <div className="flex flex-col mt-1 grow">
             <p>
               I spend all day either gaming or coding, you will NOT be finding me outs*de. I mainly play&nbsp;
               <img src="cs2.jpg" className="inline h-5 align-text-bottom" /> Counter-Strike 2 (all hail Lord GabeN),&nbsp;
@@ -55,8 +56,25 @@ export default function Home() {
           <h2 className="text-4xl whitespace-nowrap">Hobbies & Shi</h2>
         </div>
         <PopHorizontalLine />
-        <div className="justify-center">
-          <h2 className="text-center text-4xl whitespace-nowrap">Projects</h2>
+        <div className="flex-col! justify-center px-[2dvw]">
+          <div className="flex flex-col gap-2 items-center">
+            <h2 className="text-center text-4xl whitespace-nowrap">Projects</h2>
+            <p>Here's the list of all the cool projects i've worked on</p>
+          </div>
+          <div>
+            <div className="bg-gray-200 px-[2dvw] py-[2dvh] rounded-xl">
+              <div className="flex flex-row gap-2">
+                <img src="exterstellar.png" className="h-8" />
+                <div className="flex flex-col">
+                  <h3 className="text-2xl">Exterstellar</h3>
+                  <p className="text-gray-700 font-bold">A plugin based quality-of-life browser extension for Stardance.</p>
+                </div>
+              </div>
+              <div className="flex flex-row">
+                <MoveUpRight />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
