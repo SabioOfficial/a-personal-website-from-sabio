@@ -3,7 +3,7 @@ import { MoveUpRight } from "lucide-react";
 type ProfileCardProperties = {
   game: string;
   pp?: string;
-  rank?: number;
+  rank?: string;
   link?: string;
   icon?: string;
 }

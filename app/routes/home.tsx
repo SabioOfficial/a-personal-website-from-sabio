@@ -44,11 +44,52 @@ async function fetchNowPlaying(): Promise<Song | null> {
   return { title: live.name, artist: live.artist["#text"], url: live.url, cover: hasArt ? art : null }
 }
 
-// async function fetchOsuStats(): Promise<OsuStats | null> {
+let osuToken: {
+  value: string;
+  expires: number;
+} | null = null;
 
-// }
+async function getOsuToken(): Promise<string> {
+  if (osuToken && osuToken.expires > Date.now()) return osuToken.value;
+  const res = await fetch("https://osu.ppy.sh/oauth/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({
+      client_id: Number(process.env.OSU_CLIENT_ID),
+      client_secret: process.env.OSU_CLIENT_SECRET,
+      grant_type: "client_credentials",
+      scope: "public",
+    }),
+  });
+  if (!res.ok) throw new Error(`osu token ${res.status}`);
+  const data = await res.json();
+  osuToken = { value: data.access_token, expires: Date.now() + (data.expires_in - 60) * 1000 };
+  return osuToken.value;
+}
 
-export default function Home() {
+async function fetchOsuStats(): Promise<OsuStats | null> {
+  try {
+    const token = await getOsuToken();
+    const res = await fetch("https://osu.ppy.sh/api/v2/users/38674441/mania?key=id", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (!res.ok) throw new Error(`osu api ${res.status}`);
+    const { statistics } = await res.json();
+    return { pp: Math.round(statistics.pp), rank: statistics.global_rank };
+  } catch (err) {
+    console.warn("osu stats failed", err);
+    return null;
+  }
+}
+
+export async function loader() {
+  return { osu: await fetchOsuStats() };
+}
+
+export const headers = () => ({ "Cache-Control": "public, s-maxage=300" });
+
+export default function Home({ loaderData }: Route.ComponentProps) {
+  const { osu } = loaderData;
   const [playing, setPlaying] = useState<Song | null>(null);
 
   useEffect(() => {
@@ -282,8 +323,8 @@ export default function Home() {
           <div className="flex flex-col gap-2 grow">
             <GameCard
               game="osu!mania"
-              pp={3325 + "pp"}
-              rank={79955}
+              pp={osu?.pp.toLocaleString() + "pp"}
+              rank={osu?.rank.toLocaleString()}
               link="https://osu.ppy.sh/users/38674441"
               icon="osu.png"
             />
