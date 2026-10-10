@@ -319,8 +319,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           </div>
         </div>
         <PopHorizontalLine />
-        <div className="flex-row text-left justify-end px-[2dvw]">
-          <div className="flex flex-col gap-2 grow">
+        <div className="flex-col lg:flex-row-reverse items-center lg:items-start px-[2dvw]">
+          <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] w-full lg:w-1/3 text-center lg:text-right">
+            <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Games</h2>
+            <p>My gaming profiles, my elo, rank, etc!</p>
+          </div>
+          <div className="flex flex-col gap-2 w-full lg:grow">
             <GameCard
               game="osu!mania"
               pp={osu?.pp.toLocaleString() + "pp"}
@@ -333,10 +337,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               link="https://leetify.com/app/profile/76561199697525265"
               icon="cs2.jpg"
             />
-          </div>
-          <div className="flex flex-col gap-2 w-1/3 text-right">
-            <h2 className="text-[2.3dvw] whitespace-nowrap">Games</h2>
-            <p>My gaming profiles, my elo, rank, etc!</p>
           </div>
         </div>
         <PopHorizontalLine />
