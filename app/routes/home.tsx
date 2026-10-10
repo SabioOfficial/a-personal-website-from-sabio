@@ -60,7 +60,7 @@ export default function Home() {
         {playing && (
           <div className="relative overflow-hidden px-8 py-2 rounded-2xl mb-[2dvh]">
             {playing?.cover && <div className="absolute inset-0 bg-cover bg-center blur-sm scale-105 -z-10" style={{ backgroundImage: `url(${playing.cover})` }}/>}
-            <div className="absolute inset-0 bg-black -z-10" />
+            <div className="absolute inset-0 bg-black/30 -z-10" />
             <a href={playing?.url} target="_blank">
               <div className="flex flex-row gap-2 justify-center items-center text-white">
                 <p>
