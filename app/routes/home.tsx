@@ -98,6 +98,15 @@ export default function Home() {
               icon="https://cdn.modrinth.com/data/PfI69WTw/44930ee8094083fddcde2065b4e1dc8e0ad24375.gif"
             />
             <ProjectCard
+              title="Clatter"
+              description="A sick wand mod with a mana system!"
+              authorNote="A communication platform for workspaces made by a small team, for small teams."
+              github="https://github.com/Quntem/Clatter"
+              demo="https://beta.clatter.work/"
+              icon="https://raw.githubusercontent.com/Quntem/Clatter/refs/heads/main/app/public/favicon.png"
+              role="Co-Founder + Frontend Developer"
+            />
+            <ProjectCard
               title="Abyssium"
               description="Making The End worthwhile. That’s Abyssium."
               authorNote="My first Minecraft mod. It's peak."
