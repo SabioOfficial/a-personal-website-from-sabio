@@ -125,10 +125,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <h1 className="text-[25vw]/[0.78] sm:text-[30vw]/[0.78] md:text-[20vw]/[0.78] xl:text-[15vw]/[0.78] h-fit">sabio</h1>
         <p className="text-[6vw] md:text-[2vw] xl:text-[1.5vw]">(official)</p>
       </div>
-      <div className="flex flex-col gap-[6dvh] [&>div]:text-left [&>div]:flex [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[70dvw]">
+      <div className="flex flex-col gap-[6dvh] [&>div]:flex [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[95dvw] md:*:w-[90dvw] lg:*:w-[70dvw]">
         <PopHorizontalLine />
-        <div className="flex-row px-[2dvw]">
-          <h2 className="text-[2.3dvw] whitespace-nowrap">Who is bro?</h2>
+        <div className="flex-col text-left lg:flex-row px-[2dvw]">
+          <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Who is bro?</h2>
           <div className="flex flex-col mt-1 grow">
             <p>
               I'm Sabio (Official, not the doppelgänger), an <del className="decoration-2">un</del>professional full stack web developer, extremely&nbsp;
@@ -166,7 +166,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           <h2 className="text-[2.3dvw] whitespace-nowrap">Hobbies & Shi</h2>
         </div>
         <PopHorizontalLine />
-        <div className="flex-col justify-center px-[2dvw]">
+        <div className="flex-col text-left justify-center px-[2dvw]">
           <div className="flex flex-col gap-2 items-center">
             <h2 className="text-center text-[2.3dvw] whitespace-nowrap">Projects</h2>
             <p>Here's the list of all the cool projects i've worked on :)</p>
@@ -269,7 +269,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           </div>
         </div>
         <PopHorizontalLine />
-        <div className="flex-row justify-start px-[2dvw]">
+        <div className="flex-row text-left justify-start px-[2dvw]">
           <div className="flex flex-col gap-2 w-1/3">
             <h2 className="text-[2.3dvw] whitespace-nowrap">Profiles</h2>
             <p>Here's the list of all the profiles I have, gaming & socials included!</p>
@@ -319,7 +319,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           </div>
         </div>
         <PopHorizontalLine />
-        <div className="flex-row justify-end px-[2dvw]">
+        <div className="flex-row text-left justify-end px-[2dvw]">
           <div className="flex flex-col gap-2 grow">
             <GameCard
               game="osu!mania"
@@ -340,7 +340,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           </div>
         </div>
         <PopHorizontalLine />
-        <div className="flex-col justify-center px-[2dvw] mb-[6dvh]">
+        <div className="flex-col text-center justify-center px-[2dvw] mb-[6dvh]">
           <div className="flex flex-col gap-2 items-center">
             <h2 className="text-center text-[2.3dvw] whitespace-nowrap">Contacts</h2>
             <p>@sabiothedev on Discord.</p>
