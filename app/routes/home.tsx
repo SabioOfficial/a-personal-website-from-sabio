@@ -20,7 +20,7 @@ export default function Home() {
       <div className="flex flex-col gap-[6dvh] [&>div]:text-left [&>div]:flex [&>div]:flex-row [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[70dvw]">
         <PopHorizontalLine />
         <div className="px-[2dvw]">
-          <h2 className="text-4xl whitespace-nowrap">Who is bro?</h2>
+          <h2 className="text-[2.3dvw] whitespace-nowrap">Who is bro?</h2>
           <div className="flex flex-col mt-1 grow">
             <p>
               I'm Sabio (Official, not the doppelgänger), an <del className="decoration-2">un</del>professional full stack web developer, extremely&nbsp;
@@ -55,13 +55,13 @@ export default function Home() {
               <img src="exterstellar.png" className="inline h-5 align-text-bottom" /> Exterstellar!). Doomscrolling is my passion.
             </p>
           </div>
-          <h2 className="text-4xl whitespace-nowrap">Hobbies & Shi</h2>
+          <h2 className="text-[2.3dvw] whitespace-nowrap">Hobbies & Shi</h2>
         </div>
         <PopHorizontalLine />
         <div className="flex-col! justify-center px-[2dvw]">
           <div className="flex flex-col gap-2 items-center">
-            <h2 className="text-center text-4xl whitespace-nowrap">Projects</h2>
-            <p>Here's the list of all the cool projects i've worked on</p>
+            <h2 className="text-center text-[2.3dvw] whitespace-nowrap">Projects</h2>
+            <p>Here's the list of all the cool projects i've worked on :)</p>
           </div>
           <div className="flex flex-col gap-2">
             <ProjectCard

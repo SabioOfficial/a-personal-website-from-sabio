@@ -14,7 +14,7 @@ type ProjectCardProperties = {
 
 export default function ProjectCard({ title, description, authorNote, github, demo, icon, role, wip, releaseDate }: ProjectCardProperties) {
   return (
-    <div className="bg-gray-200 px-[2dvw] py-[2dvh] rounded-xl flex flex-row">
+    <div className="bg-gray-100 shadow-[inset_0px_0px_20px_0px_rgba(0,0,0,0.1)] hover:shadow-[rgba(0,0,0,0.15)] transition-all duration-100 px-[2dvw] py-[2dvh] rounded-xl flex flex-row">
       <div className="flex flex-row gap-3">
         {icon && <img src={icon} alt="" className="h-fit w-8 rounded-md" />}
         {!icon && <img src={"no_image_available.jpg"} alt="" className="h-fit w-8 rounded-md" />}
@@ -39,7 +39,7 @@ export default function ProjectCard({ title, description, authorNote, github, de
           </a>
         )}
         {demo && (
-          <a className="cursor-pointer bg-gray-300 rounded-full p-1.5" href={demo} target="_blank">
+          <a className="cursor-pointer bg-gray-300 rounded-full p-1.5" href={demo} target="_blank" title="Demo">
             <MoveUpRight size={20} />
           </a>
         )}
