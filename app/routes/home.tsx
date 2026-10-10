@@ -125,9 +125,9 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <h1 className="text-[25vw]/[0.78] sm:text-[30vw]/[0.78] md:text-[20vw]/[0.78] xl:text-[15vw]/[0.78] h-fit">sabio</h1>
         <p className="text-[6vw] md:text-[2vw] xl:text-[1.5vw]">(official)</p>
       </div>
-      <div className="flex flex-col gap-[6dvh] [&>div]:flex [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[95dvw] md:*:w-[90dvw] lg:*:w-[70dvw]">
+      <div className="flex flex-col gap-[6dvh] [&>div]:flex [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[95dvw] md:*:w-[90dvw] xl:*:w-[70dvw]">
         <PopHorizontalLine />
-        <div className="flex-col text-left lg:flex-row px-[2dvw]">
+        <div className="flex-col lg:flex-row text-left px-[2dvw]">
           <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Who is bro?</h2>
           <div className="flex flex-col mt-1 grow">
             <p>
@@ -150,7 +150,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           </div>
         </div>
         <PopHorizontalLine />
-        <div className="flex-row text-right justify-end px-[2dvw]">
+        <div className="flex-col lg:flex-row text-right justify-end px-[2dvw]">
           <div className="flex flex-col mt-1 grow">
             <p>
               I spend all day either gaming or coding, you will NOT be finding me outs*de. I mainly play&nbsp;
@@ -163,7 +163,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               <img src="exterstellar.png" className="inline h-5 align-text-bottom" /> Exterstellar!). Doomscrolling is my passion.
             </p>
           </div>
-          <h2 className="text-[2.3dvw] whitespace-nowrap">Hobbies & Shi</h2>
+          <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Hobbies & Shi</h2>
         </div>
         <PopHorizontalLine />
         <div className="flex-col text-left justify-center px-[2dvw]">
