@@ -167,11 +167,11 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </div>
         <PopHorizontalLine />
         <div className="flex-col text-left justify-center px-[2dvw]">
-          <div className="flex flex-col gap-2 items-center">
-            <h2 className="text-center text-[2.3dvw] whitespace-nowrap">Projects</h2>
+          <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] items-center text-center">
+            <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Projects</h2>
             <p>Here's the list of all the cool projects i've worked on :)</p>
           </div>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
             <ProjectCard
               title="Exterstellar"
               description="A plugin based quality-of-life browser extension for Stardance."
