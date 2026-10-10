@@ -269,12 +269,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           </div>
         </div>
         <PopHorizontalLine />
-        <div className="flex-row text-left justify-start px-[2dvw]">
-          <div className="flex flex-col gap-2 w-1/3">
-            <h2 className="text-[2.3dvw] whitespace-nowrap">Profiles</h2>
+        <div className="flex-col lg:flex-row items-center lg:items-start px-[2dvw]">
+          <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] w-full lg:w-1/3 text-center lg:text-left">
+            <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Profiles</h2>
             <p>Here's the list of all the profiles I have, gaming & socials included!</p>
           </div>
-          <div className="flex flex-col gap-2 grow">
+          <div className="flex flex-col gap-2 w-full lg:grow">
             <ProfileCard
               platform="YouTube"
               handle="@sabioofficiall"
