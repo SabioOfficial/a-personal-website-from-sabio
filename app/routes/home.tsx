@@ -328,10 +328,22 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               link="https://osu.ppy.sh/users/38674441"
               icon="osu.png"
             />
+            <GameCard
+              game="CS2"
+              link="https://leetify.com/app/profile/76561199697525265"
+              icon="cs2.jpg"
+            />
           </div>
           <div className="flex flex-col gap-2 w-1/3 text-right">
             <h2 className="text-[2.3dvw] whitespace-nowrap">Games</h2>
             <p>My gaming profiles, my elo, rank, etc!</p>
+          </div>
+        </div>
+        <PopHorizontalLine />
+        <div className="flex-col justify-center px-[2dvw] mb-[6dvh]">
+          <div className="flex flex-col gap-2 items-center">
+            <h2 className="text-center text-[2.3dvw] whitespace-nowrap">Contacts</h2>
+            <p>@sabiothedev on Discord.</p>
           </div>
         </div>
       </div>
