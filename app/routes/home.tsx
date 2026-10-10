@@ -3,6 +3,7 @@ import PopHorizontalLine from "~/components/horizontal_line";
 import ProjectCard from "~/components/project_card";
 import ProfileCard from "~/components/profile_card";
 import { useEffect, useState } from "react";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -15,6 +16,7 @@ type Song = {
   title: string;
   artist: string;
   url: string;
+  cover: string | null;
 }
 
 async function fetchNowPlaying(): Promise<Song | null> {
@@ -31,7 +33,9 @@ async function fetchNowPlaying(): Promise<Song | null> {
   const tracks = data?.recenttracks?.track ?? [];
   const live = tracks.filter((t: any) => t["@attr"]?.nowplaying)[0];
   if (!live) return null;
-  return { title: live.name, artist: live.artist["#text"], url: live.url }
+  const art = live.image?.at(-1)?.["#text"];
+  const hasArt = art && !art.includes("2a96cbd8b46e442fc41c2b86b821562f");
+  return { title: live.name, artist: live.artist["#text"], url: live.url, cover: hasArt ? art : null }
 }
 
 export default function Home() {
@@ -52,10 +56,21 @@ export default function Home() {
 
   return (
     <main className="flex flex-col">
-      <div className="text-center flex flex-col gap-[2.5dvh] justify-center h-dvh *:cursor-pointer *:select-none">
-        {playing && (<div>
-          <p>Listening to<a className="text-xl" href={playing.url} target="_blank"> {playing.title} - {playing.artist}</a></p>
-        </div>)}
+      <div className="text-center flex flex-col gap-[2.5dvh] justify-center items-center h-dvh *:cursor-pointer *:select-none">
+        {playing && (
+          <div className="relative overflow-hidden px-8 py-2 rounded-2xl mb-[2dvh]">
+            {playing?.cover && <div className="absolute inset-0 bg-cover bg-center blur-sm scale-105 -z-10" style={{ backgroundImage: `url(${playing.cover})` }}/>}
+            <div className="absolute inset-0 bg-black/30 -z-10" />
+            <a href={playing?.url} target="_blank">
+              <div className="flex flex-row gap-2 justify-center items-center text-white">
+                <p>
+                  Listening to <span className="text-2xl">{playing?.title}</span> <span className="text-base font-normal">- {playing?.artist}</span>
+                </p>
+                <SquareArrowOutUpRight size={18} strokeWidth={2.5} />
+              </div>
+            </a>
+          </div>
+        )}
         <h1 className="text-[15vw]/[0.78] h-fit">sabio</h1>
         <p className="text-[1.5vw]">(official)</p>
       </div>
