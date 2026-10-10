@@ -2,6 +2,7 @@ import type { Route } from "./+types/home";
 import PopHorizontalLine from "~/components/horizontal_line";
 import { MoveUpRight } from 'lucide-react';
 import ProjectCard from "~/components/project_card";
+import ProfileCard from "~/components/profile_card";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -17,9 +18,9 @@ export default function Home() {
         <h1 className="text-[15vw]/[0.78] h-fit">sabio</h1>
         <p className="text-[1.5vw]">(official)</p>
       </div>
-      <div className="flex flex-col gap-[6dvh] [&>div]:text-left [&>div]:flex [&>div]:flex-row [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[70dvw]">
+      <div className="flex flex-col gap-[6dvh] [&>div]:text-left [&>div]:flex [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[70dvw]">
         <PopHorizontalLine />
-        <div className="px-[2dvw]">
+        <div className="flex-row px-[2dvw]">
           <h2 className="text-[2.3dvw] whitespace-nowrap">Who is bro?</h2>
           <div className="flex flex-col mt-1 grow">
             <p>
@@ -42,7 +43,7 @@ export default function Home() {
           </div>
         </div>
         <PopHorizontalLine />
-        <div className="text-right justify-end px-[2dvw]">
+        <div className="flex-row text-right justify-end px-[2dvw]">
           <div className="flex flex-col mt-1 grow">
             <p>
               I spend all day either gaming or coding, you will NOT be finding me outs*de. I mainly play&nbsp;
@@ -58,7 +59,7 @@ export default function Home() {
           <h2 className="text-[2.3dvw] whitespace-nowrap">Hobbies & Shi</h2>
         </div>
         <PopHorizontalLine />
-        <div className="flex-col! justify-center px-[2dvw]">
+        <div className="flex-col justify-center px-[2dvw]">
           <div className="flex flex-col gap-2 items-center">
             <h2 className="text-center text-[2.3dvw] whitespace-nowrap">Projects</h2>
             <p>Here's the list of all the cool projects i've worked on :)</p>
@@ -157,6 +158,56 @@ export default function Home() {
               authorNote="On indefinite development pause."
               github="https://github.com/SabioOfficial/XtensionAPI"
               wip={true}
+            />
+          </div>
+        </div>
+        <PopHorizontalLine />
+        <div className="flex-row justify-start px-[2dvw]">
+          <div className="flex flex-col gap-2 w-1/3">
+            <h2 className="text-[2.3dvw] whitespace-nowrap">Profiles</h2>
+            <p>Here's the list of all the profiles I have, gaming & socials included!</p>
+          </div>
+          <div className="flex flex-col gap-2 grow">
+            <ProfileCard
+              platform="YouTube"
+              handle="@sabioofficiall"
+              authorNote="tuff sigma youtube"
+              link="https://www.youtube.com/@sabioofficiall"
+              icon="youtube.png"
+            />
+            <ProfileCard
+              platform="Steam"
+              handle="ID SabioOfficial"
+              authorNote="im rich & an addicted gambler"
+              link="https://steamcommunity.com/id/SabioOfficial/"
+              icon="https://a.favicon.im/steamcommunity.com"
+            />
+            <ProfileCard
+              platform="osu"
+              handle="@sabioofficial"
+              authorNote="ultra tuff rhythm game"
+              link="https://osu.ppy.sh/users/38674441"
+              icon="osu.png"
+            />
+            <ProfileCard
+              platform="Discord"
+              handle="@sabiothedev"
+              authorNote="i accept no responsibility for my actions on the group gc"
+              icon="https://a.favicon.im/discord.com"
+            />
+            <ProfileCard
+              platform="GitHub"
+              handle="@SabioOfficial"
+              authorNote="creator of over 60 abandoned/never finished projects!"
+              link="https://github.com/SabioOfficial"
+              icon="https://a.favicon.im/github.com"
+            />
+            <ProfileCard
+              platform="Last.fm"
+              handle="@sabioreal"
+              authorNote="i adore hardstyle/happy hardcore/toby fox/jumpstyle/breakcore"
+              link="https://www.last.fm/user/sabioreal"
+              icon="https://a.favicon.im/last.fm"
             />
           </div>
         </div>
