@@ -1,8 +1,8 @@
 import type { Route } from "./+types/home";
 import PopHorizontalLine from "~/components/horizontal_line";
-import { MoveUpRight } from 'lucide-react';
 import ProjectCard from "~/components/project_card";
 import ProfileCard from "~/components/profile_card";
+import { useEffect, useState } from "react";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,10 +11,51 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
+type Song = {
+  title: string;
+  artist: string;
+  url: string;
+}
+
+async function fetchNowPlaying(): Promise<Song | null> {
+  const params = new URLSearchParams({
+    method: "user.getrecenttracks",
+    user: "sabioreal",
+    api_key: import.meta.env.VITE_LASTFM_API_KEY,
+    format: "json",
+    limit: "2",
+  });
+  const res = await fetch(`https://ws.audioscrobbler.com/2.0/?${params}`);
+  if (!res.ok) throw new Error(`last.fm return ${res.status}`);
+  const data = await res.json();
+  const tracks = data?.recenttracks?.track ?? [];
+  const live = tracks.filter((t: any) => t["@attr"]?.nowplaying)[0];
+  if (!live) return null;
+  return { title: live.name, artist: live.artist["#text"], url: live.url }
+}
+
 export default function Home() {
+  const [playing, setPlaying] = useState<Song | null>(null);
+
+  useEffect(() => {
+    const tick = () =>
+      fetchNowPlaying().then(setPlaying).catch((err) => {
+        if (err instanceof TypeError) {
+          console.warn("last.fm unreachable", err);
+          setPlaying(null);
+        } else throw err;
+      });
+    tick();
+    const id = setInterval(tick, 30000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <main className="flex flex-col">
       <div className="text-center flex flex-col gap-[2.5dvh] justify-center h-dvh *:cursor-pointer *:select-none">
+        {playing && (<div>
+          <p>Listening to<a className="text-xl" href={playing.url} target="_blank"> {playing.title} - {playing.artist}</a></p>
+        </div>)}
         <h1 className="text-[15vw]/[0.78] h-fit">sabio</h1>
         <p className="text-[1.5vw]">(official)</p>
       </div>
