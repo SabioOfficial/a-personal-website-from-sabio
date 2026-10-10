@@ -1,4 +1,5 @@
 import { MoveUpRight } from "lucide-react";
+import PopHorizontalLine from "./horizontal_line";
 
 type ProjectCardProperties = {
   title: string;
@@ -14,7 +15,7 @@ type ProjectCardProperties = {
 
 export default function ProjectCard({ title, description, authorNote, github, demo, icon, role, wip, releaseDate }: ProjectCardProperties) {
   return (
-    <div className="bg-gray-100 shadow-[inset_0px_0px_20px_0px_rgba(0,0,0,0.1)] hover:shadow-[rgba(0,0,0,0.15)] transition-all duration-100 px-[2dvw] py-[2dvh] rounded-xl flex flex-row">
+    <div className="bg-gray-100 shadow-[inset_0px_0px_20px_0px_rgba(0,0,0,0.1)] hover:shadow-[rgba(0,0,0,0.15)] transition-all duration-100 px-[2dvw] py-[2dvh] rounded-xl flex flex-row gap-4">
       <div className="flex flex-row gap-3">
         {icon && <img src={icon} alt="" className="h-fit w-8 rounded-md" loading="lazy" />}
         {!icon && <img src={"no_image_available.jpg"} alt="" className="h-fit w-8 rounded-md" />}
@@ -23,10 +24,10 @@ export default function ProjectCard({ title, description, authorNote, github, de
             {wip && <p className="text-xs text-gray-400">WIP</p>}
             {releaseDate && <p className="text-xs text-gray-400">Releasing {releaseDate}</p>}
           </div>
-          {role && <h3 className="text-2xl">{title} <span className="text-sm">{role}</span></h3>}
-          {!role && <h3 className="text-2xl">{title} <span className="text-sm text-gray-300">Independent Project</span></h3>}
-          {authorNote && <p className="text-gray-500 font-medium text-sm">Developer's Note: {authorNote}</p>}
-          <p className="text-gray-700 font-bold">{description}</p>
+          {role && <h3 className="text-2xl mb-1">{title} <span className="text-sm">{role}</span></h3>}
+          {!role && <h3 className="text-2xl mb-1">{title}</h3>}
+          <p className="text-gray-700 font-bold mb-2 text-sm">{description}</p>
+          {authorNote && <p className="text-gray-500 font-medium text-xs mt-auto">Developer's Note: {authorNote}</p>}
         </div>
       </div>
       <div className="flex flex-row gap-2 ml-auto my-auto">

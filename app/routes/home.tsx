@@ -64,7 +64,7 @@ export default function Home() {
             <h2 className="text-center text-[2.3dvw] whitespace-nowrap">Projects</h2>
             <p>Here's the list of all the cool projects i've worked on :)</p>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="grid grid-cols-2 gap-2">
             <ProjectCard
               title="Exterstellar"
               description="A plugin based quality-of-life browser extension for Stardance."
