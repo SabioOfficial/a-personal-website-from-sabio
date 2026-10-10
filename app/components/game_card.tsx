@@ -1,23 +1,23 @@
 import { MoveUpRight } from "lucide-react";
 
 type ProfileCardProperties = {
-  platform: string;
-  handle?: string;
-  authorNote?: string;
+  game: string;
+  pp?: string;
+  rank?: number;
   link?: string;
   icon?: string;
 }
 
-export default function ProfileCard({ platform, handle, authorNote, link, icon }: ProfileCardProperties) {
+export default function GameCard({ game, pp, rank, link, icon }: ProfileCardProperties) {
   return (
     <div className="bg-gray-100 shadow-[inset_0px_0px_20px_0px_rgba(0,0,0,0.1)] hover:shadow-[rgba(0,0,0,0.15)] transition-all duration-100 px-[2dvw] py-[2dvh] rounded-xl flex flex-row">
       <div className="flex flex-row gap-3">
         {icon && <img src={icon} alt="" className="h-fit w-8 rounded-md" loading="lazy" />}
         {!icon && <img src={"no_image_available.jpg"} alt="" className="h-fit w-8 rounded-md" />}
         <div className="flex flex-col">
-          {handle && <h3 className="text-2xl">{platform} <span className="text-sm">{handle}</span></h3>}
-          {!handle && <h3 className="text-2xl">{platform}</h3>}
-          {authorNote && <p className="text-gray-500 font-medium text-sm">P.S. {authorNote}</p>}
+          {pp && <h3 className="text-2xl">{game} <span className="text-sm">{pp}</span></h3>}
+          {!pp && <h3 className="text-2xl">{game}</h3>}
+          {rank && <p className="text-gray-500 font-medium text-sm">Global Rank #{rank}</p>}
         </div>
       </div>
       <div className="my-auto ml-auto">

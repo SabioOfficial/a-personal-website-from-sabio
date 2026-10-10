@@ -4,6 +4,7 @@ import ProjectCard from "~/components/project_card";
 import ProfileCard from "~/components/profile_card";
 import { useEffect, useState } from "react";
 import { SquareArrowOutUpRight } from "lucide-react";
+import GameCard from "~/components/game_card";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -17,6 +18,11 @@ type Song = {
   artist: string;
   url: string;
   cover: string | null;
+}
+
+type OsuStats = {
+  pp: number;
+  rank: number;
 }
 
 async function fetchNowPlaying(): Promise<Song | null> {
@@ -37,6 +43,10 @@ async function fetchNowPlaying(): Promise<Song | null> {
   const hasArt = art && !art.includes("2a96cbd8b46e442fc41c2b86b821562f");
   return { title: live.name, artist: live.artist["#text"], url: live.url, cover: hasArt ? art : null }
 }
+
+// async function fetchOsuStats(): Promise<OsuStats | null> {
+
+// }
 
 export default function Home() {
   const [playing, setPlaying] = useState<Song | null>(null);
@@ -64,7 +74,7 @@ export default function Home() {
             <a href={playing?.url} target="_blank">
               <div className="flex flex-row gap-2 justify-center items-center text-white">
                 <p>
-                  Listening to <span className="text-2xl">{playing?.title}</span> <span className="text-base font-normal">- {playing?.artist}</span>
+                  Listening to<span className="text-2xl"> {playing?.title} </span><span className="text-base font-normal">- {playing?.artist}</span>
                 </p>
                 <SquareArrowOutUpRight size={18} strokeWidth={2.5} />
               </div>
@@ -265,6 +275,22 @@ export default function Home() {
               link="https://www.last.fm/user/sabioreal"
               icon="https://a.favicon.im/last.fm"
             />
+          </div>
+        </div>
+        <PopHorizontalLine />
+        <div className="flex-row justify-end px-[2dvw]">
+          <div className="flex flex-col gap-2 grow">
+            <GameCard
+              game="osu!mania"
+              pp={3325 + "pp"}
+              rank={79955}
+              link="https://osu.ppy.sh/users/38674441"
+              icon="osu.png"
+            />
+          </div>
+          <div className="flex flex-col gap-2 w-1/3 text-right">
+            <h2 className="text-[2.3dvw] whitespace-nowrap">Games</h2>
+            <p>My gaming profiles, my elo, rank, etc!</p>
           </div>
         </div>
       </div>
