@@ -107,23 +107,23 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
   return (
     <main className="flex flex-col">
-      <div className="text-center flex flex-col gap-[2.5dvh] justify-center items-center h-dvh *:cursor-pointer *:select-none">
+      <div className="text-center flex flex-col gap-4 xl:gap-[2.5dvh] justify-center items-center h-dvh *:cursor-pointer *:select-none">
         {playing && (
           <div className="relative overflow-hidden px-8 py-2 rounded-2xl mb-[2dvh]">
             {playing?.cover && <div className="absolute inset-0 bg-cover bg-center blur-sm scale-105 -z-10" style={{ backgroundImage: `url(${playing.cover})` }}/>}
             <div className="absolute inset-0 bg-black/30 -z-10" />
             <a href={playing?.url} target="_blank">
               <div className="flex flex-row gap-2 justify-center items-center text-white">
-                <p>
-                  Listening to<span className="text-2xl"> {playing?.title} </span><span className="text-base font-normal">- {playing?.artist}</span>
+                <p className="md:text-[2vw] lg:text-[1.25vw]">
+                  Listening to<span className="text-[4vw] md:text-[2.75vw] lg:text-[1.5vw]"> {playing?.title} </span><span className="hidden sm:inline md:text-[1.7vw] lg:text-[1.1vw] font-normal">- {playing?.artist}</span>
                 </p>
                 <SquareArrowOutUpRight size={18} strokeWidth={2.5} />
               </div>
             </a>
           </div>
         )}
-        <h1 className="text-[15vw]/[0.78] h-fit">sabio</h1>
-        <p className="text-[1.5vw]">(official)</p>
+        <h1 className="text-[25vw]/[0.78] sm:text-[30vw]/[0.78] md:text-[20vw]/[0.78] xl:text-[15vw]/[0.78] h-fit">sabio</h1>
+        <p className="text-[6vw] md:text-[2vw] xl:text-[1.5vw]">(official)</p>
       </div>
       <div className="flex flex-col gap-[6dvh] [&>div]:text-left [&>div]:flex [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[70dvw]">
         <PopHorizontalLine />
