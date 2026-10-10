@@ -341,8 +341,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </div>
         <PopHorizontalLine />
         <div className="flex-col text-center justify-center px-[2dvw] mb-[6dvh]">
-          <div className="flex flex-col gap-2 items-center">
-            <h2 className="text-center text-[2.3dvw] whitespace-nowrap">Contacts</h2>
+          <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] text-center">
+            <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Contacts</h2>
             <p>@sabiothedev on Discord.</p>
           </div>
         </div>
