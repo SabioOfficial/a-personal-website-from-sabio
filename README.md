@@ -4,7 +4,7 @@ Now with React Router v8, the most peak web development framework of all time! U
 
 ## How to localhost?
 
-First, run `npm install` in the root directory of this repository. After it is complete, run `npm run dev`. You will need [Node.js](https://nodejs.org/) for this. There is no `.env` for this repository.
+First, run `npm install` in the root directory of this repository. After it is complete, run `npm run dev`. You will need [Node.js](https://nodejs.org/) for this. **There is an `.env` for this repository.**
 
 ## What is this?
 
