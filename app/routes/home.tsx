@@ -12,6 +12,10 @@ export function meta({}: Route.MetaArgs) {
   return [
     { title: "A Personal Website From Sabio" },
     { name: "description", content: "the real, official website for sabio. no uranium included" },
+    { property: "og:title", content: "sabio (official)" },
+    { property: "og:description", content: "the real, official website for sabio. no uranium included" },
+    { property: "og:image", content: "https://sabiothe.dev/og.png" },
+    { name: "twitter:card", content: "summary_large_image" },
   ];
 }
 
