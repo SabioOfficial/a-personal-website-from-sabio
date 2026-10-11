@@ -25,6 +25,11 @@ type OsuStats = {
   rank: number;
 }
 
+type BeatLeaderStats = {
+  pp: number;
+  rank: number;
+}
+
 async function fetchNowPlaying(): Promise<Song | null> {
   const params = new URLSearchParams({
     method: "user.getrecenttracks",
@@ -82,14 +87,27 @@ async function fetchOsuStats(): Promise<OsuStats | null> {
   }
 }
 
+async function fetchBeatLeaderStats(): Promise<BeatLeaderStats | null> {
+  try {
+    const res = await fetch("https://api.beatleader.com/player/76561199697525265");
+    if (!res.ok) throw new Error(`beatleader ${res.status}`);
+    const p = await res.json();
+    return { pp: Math.round(p.pp), rank: p.rank };
+  } catch (err) {
+    console.warn("beatleader failed", err);
+    return null;
+  }
+}
+
 export async function loader() {
-  return { osu: await fetchOsuStats() };
+  const [osu, bl] = await Promise.all([fetchOsuStats(), fetchBeatLeaderStats()]);
+  return { osu, bl };
 }
 
 export const headers = () => ({ "Cache-Control": "public, s-maxage=300" });
 
 export default function Home({ loaderData }: Route.ComponentProps) {
-  const { osu } = loaderData;
+  const { osu, bl } = loaderData;
   const [playing, setPlaying] = useState<Song | null>(null);
 
   useEffect(() => {
@@ -327,10 +345,17 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           <div className="flex flex-col gap-2 w-full lg:grow">
             <GameCard
               game="osu!mania"
-              pp={osu?.pp.toLocaleString() + "pp"}
+              pp={osu ? osu?.pp.toLocaleString() + "pp" : undefined}
               rank={osu?.rank.toLocaleString()}
               link="https://osu.ppy.sh/users/38674441"
               icon="osu.png"
+            />
+            <GameCard
+              game="BeatLeader"
+              pp={bl ? bl.pp.toLocaleString() + "pp" : undefined}
+              rank={bl?.rank.toLocaleString()}
+              link="https://beatleader.com/u/sabio/ranked"
+              icon="https://a.favicon.im/beatleader.com"
             />
             <GameCard
               game="CS2"
