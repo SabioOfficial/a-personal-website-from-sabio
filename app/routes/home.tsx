@@ -5,6 +5,8 @@ import ProfileCard from "~/components/profile_card";
 import { useEffect, useState } from "react";
 import { SquareArrowOutUpRight } from "lucide-react";
 import GameCard from "~/components/game_card";
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -121,6 +123,19 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     tick();
     const id = setInterval(tick, 30000);
     return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy();
   }, []);
 
   return (
