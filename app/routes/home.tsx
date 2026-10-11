@@ -147,7 +147,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <main className="flex flex-col dark:bg-gray-950">
       <div className="flex flex-row justify-center items-center h-dvh">
-        <img src="pop.svg" className="h-[15vw]" />
         <div className="text-center flex flex-col gap-4 xl:gap-[2.5dvh] *:cursor-pointer *:select-none">
           {playing && (
             <div className="relative isolate overflow-hidden px-8 py-2 rounded-2xl mb-[2dvh]">
@@ -163,18 +162,23 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               </a>
             </div>
           )}
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[25vw]/[0.78] sm:text-[30vw]/[0.78] md:text-[20vw]/[0.78] xl:text-[15vw]/[0.78] h-fit dark:text-white"
-          >sabio</motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-[6vw] md:text-[2vw] xl:text-[1.5vw] dark:text-white"
-          >(official)</motion.p>
+          <div className="flex flex-row justify-center">
+            <img src="pop.svg" className="text-[10vw] hidden md:block md:h-[20vw] xl:h-[15vw]" />
+            <div className="flex flex-col gap-4 xl:gap-[2.5dvh] *:cursor-pointer *:select-none">
+              <motion.h1
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="text-[25vw]/[0.78] sm:text-[30vw]/[0.78] md:text-[20vw]/[0.78] xl:text-[15vw]/[0.78] h-fit dark:text-white"
+              >sabio</motion.h1>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="text-[6vw] md:text-[2vw] xl:text-[1.5vw] dark:text-white"
+              >(official)</motion.p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="flex flex-col gap-[6dvh] [&>div]:flex [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[95dvw] md:*:w-[90dvw] xl:*:w-[70dvw]">
