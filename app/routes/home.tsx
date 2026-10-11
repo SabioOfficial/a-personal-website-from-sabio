@@ -343,6 +343,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               icon="https://a.favicon.im/discord.com"
             />
             <ProfileCard
+              platform="Modrinth"
+              handle="@SabioOfficial"
+              authorNote="i worked on these mods for a crisp 4 dollars"
+              link="https://modrinth.com/user/SabioOfficial"
+              icon="https://a.favicon.im/modrinth.com"
+            />
+            <ProfileCard
               platform="GitHub"
               handle="@SabioOfficial"
               authorNote="creator of over 60 abandoned/never finished projects!"
@@ -390,7 +397,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <div className="flex-col text-center justify-center px-[2dvw] mb-[6dvh]">
           <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] text-center">
             <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Contacts</h2>
-            <p className="dark:text-gray-200">@sabiothedev on Discord.</p>
+            <p className="dark:text-gray-200">@sabiothedev on <img src="https://a.favicon.im/discord.com" className="inline h-5 align-text-bottom" loading="lazy" /> Discord.</p>
           </div>
         </div>
       </div>
