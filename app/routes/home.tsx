@@ -315,6 +315,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               icon="osu.png"
             />
             <ProfileCard
+              platform="BeatLeader"
+              handle="@sabio"
+              authorNote="ultra extra tuff rhythm game"
+              link="https://beatleader.com/u/sabio/ranked"
+              icon="https://a.favicon.im/beatleader.com"
+            />
+            <ProfileCard
               platform="Discord"
               handle="@sabiothedev"
               authorNote="i accept no responsibility for my actions on the group gc"
