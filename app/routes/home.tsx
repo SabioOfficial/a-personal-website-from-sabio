@@ -5,8 +5,10 @@ import ProfileCard from "~/components/profile_card";
 import { useEffect, useState } from "react";
 import { SquareArrowOutUpRight } from "lucide-react";
 import GameCard from "~/components/game_card";
+import { motion } from "motion/react";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
+import { Reveal, Stagger } from "~/components/reveal";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -161,14 +163,24 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               </a>
             </div>
           )}
-          <h1 className="text-[25vw]/[0.78] sm:text-[30vw]/[0.78] md:text-[20vw]/[0.78] xl:text-[15vw]/[0.78] h-fit dark:text-white">sabio</h1>
-          <p className="text-[6vw] md:text-[2vw] xl:text-[1.5vw] dark:text-white">(official)</p>
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="text-[25vw]/[0.78] sm:text-[30vw]/[0.78] md:text-[20vw]/[0.78] xl:text-[15vw]/[0.78] h-fit dark:text-white"
+          >sabio</motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-[6vw] md:text-[2vw] xl:text-[1.5vw] dark:text-white"
+          >(official)</motion.p>
         </div>
       </div>
       <div className="flex flex-col gap-[6dvh] [&>div]:flex [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[95dvw] md:*:w-[90dvw] xl:*:w-[70dvw]">
         <PopHorizontalLine />
         <div className="flex-col lg:flex-row text-left px-[2dvw]">
-          <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Who is bro?</h2>
+          <Reveal from="left" className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Who is bro?</Reveal>
           <div className="flex flex-col mt-1 grow">
             <p className="dark:text-gray-200">
               I'm Sabio (Official, not the doppelgänger), an <del className="decoration-2">un</del>professional full stack web developer, extremely&nbsp;
@@ -203,15 +215,15 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               <img src="exterstellar.png" className="inline h-5 align-text-bottom" /> Exterstellar!). Doomscrolling is my passion.
             </p>
           </div>
-          <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Hobbies & Shi</h2>
+          <Reveal from="right" className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Hobbies & Shi</Reveal>
         </div>
         <PopHorizontalLine />
         <div className="flex-col text-left justify-center px-[2dvw]">
-          <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] items-center text-center">
+          <Reveal className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] items-center text-center">
             <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Projects</h2>
             <p className="dark:text-gray-200">Here's the list of all the cool projects i've worked on :)</p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+          </Reveal>
+          <Stagger cols={2} className="grid grid-cols-1 lg:grid-cols-2 gap-2">
             <ProjectCard
               title="Exterstellar"
               description="A plugin based quality-of-life browser extension for Stardance."
@@ -306,15 +318,15 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               github="https://github.com/SabioOfficial/XtensionAPI"
               wip={true}
             />
-          </div>
+          </Stagger>
         </div>
         <PopHorizontalLine />
         <div className="flex-col lg:flex-row items-center lg:items-start px-[2dvw]">
-          <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] w-full lg:w-1/3 text-center lg:text-left">
+          <Reveal from="left" className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] w-full lg:w-1/3 text-center lg:text-left">
             <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Profiles</h2>
             <p className="dark:text-gray-200">Here's the list of all the profiles I have, gaming & socials included!</p>
-          </div>
-          <div className="flex flex-col gap-2 w-full lg:grow">
+          </Reveal>
+          <Stagger className="flex flex-col gap-2 w-full lg:grow">
             <ProfileCard
               platform="YouTube"
               handle="@sabioofficiall"
@@ -370,15 +382,15 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               link="https://www.last.fm/user/sabioreal"
               icon="https://a.favicon.im/last.fm"
             />
-          </div>
+          </Stagger>
         </div>
         <PopHorizontalLine />
         <div className="flex-col lg:flex-row-reverse items-center lg:items-start px-[2dvw]">
-          <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] w-full lg:w-1/3 text-center lg:text-right">
+          <Reveal from="right" className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] w-full lg:w-1/3 text-center lg:text-right">
             <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Games</h2>
             <p className="dark:text-gray-200">My gaming profiles, my elo, rank, etc!</p>
-          </div>
-          <div className="flex flex-col gap-2 w-full lg:grow">
+          </Reveal>
+          <Stagger className="flex flex-col gap-2 w-full lg:grow">
             <GameCard
               game="osu!mania"
               pp={osu ? osu?.pp.toLocaleString() + "pp" : undefined}
@@ -398,15 +410,15 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               link="https://leetify.com/app/profile/76561199697525265"
               icon="cs2.jpg"
             />
-          </div>
+          </Stagger>
         </div>
         <PopHorizontalLine />
-        <div className="flex-col text-center justify-center px-[2dvw] mb-[6dvh]">
+        <Reveal className="flex-col text-center justify-center px-[2dvw] mb-[6dvh]">
           <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] text-center">
             <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Contacts</h2>
             <p className="dark:text-gray-200">@sabiothedev on <img src="https://a.favicon.im/discord.com" className="inline h-5 align-text-bottom" loading="lazy" /> Discord.</p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </main>
   );
