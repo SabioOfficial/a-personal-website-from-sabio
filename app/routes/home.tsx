@@ -240,8 +240,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             />
             <ProjectCard
               title="Clatter"
-              description="A sick wand mod with a mana system!"
-              authorNote="A communication platform for workspaces made by a small team, for small teams."
+              description="A communication platform for workspaces."
+              authorNote="My first ever team-based project!"
               github="https://github.com/Quntem/Clatter"
               demo="https://beta.clatter.work/"
               icon="https://raw.githubusercontent.com/Quntem/Clatter/refs/heads/main/app/public/favicon.png"
