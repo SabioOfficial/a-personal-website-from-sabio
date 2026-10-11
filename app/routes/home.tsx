@@ -106,10 +106,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   }, []);
 
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col dark:bg-gray-950">
       <div className="text-center flex flex-col gap-4 xl:gap-[2.5dvh] justify-center items-center h-dvh *:cursor-pointer *:select-none">
         {playing && (
-          <div className="relative overflow-hidden px-8 py-2 rounded-2xl mb-[2dvh]">
+          <div className="relative isolate overflow-hidden px-8 py-2 rounded-2xl mb-[2dvh]">
             {playing?.cover && <div className="absolute inset-0 bg-cover bg-center blur-sm scale-105 -z-10" style={{ backgroundImage: `url(${playing.cover})` }}/>}
             <div className="absolute inset-0 bg-black/30 -z-10" />
             <a href={playing?.url} target="_blank">
@@ -122,15 +122,15 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             </a>
           </div>
         )}
-        <h1 className="text-[25vw]/[0.78] sm:text-[30vw]/[0.78] md:text-[20vw]/[0.78] xl:text-[15vw]/[0.78] h-fit">sabio</h1>
-        <p className="text-[6vw] md:text-[2vw] xl:text-[1.5vw]">(official)</p>
+        <h1 className="text-[25vw]/[0.78] sm:text-[30vw]/[0.78] md:text-[20vw]/[0.78] xl:text-[15vw]/[0.78] h-fit dark:text-white">sabio</h1>
+        <p className="text-[6vw] md:text-[2vw] xl:text-[1.5vw] dark:text-white">(official)</p>
       </div>
       <div className="flex flex-col gap-[6dvh] [&>div]:flex [&>div]:gap-6 *:ml-auto *:mr-auto *:w-[95dvw] md:*:w-[90dvw] xl:*:w-[70dvw]">
         <PopHorizontalLine />
         <div className="flex-col lg:flex-row text-left px-[2dvw]">
-          <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Who is bro?</h2>
+          <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Who is bro?</h2>
           <div className="flex flex-col mt-1 grow">
-            <p>
+            <p className="dark:text-gray-200">
               I'm Sabio (Official, not the doppelgänger), an <del className="decoration-2">un</del>professional full stack web developer, extremely&nbsp;
               <del>horrible</del> good game developer, and a <del>ass</del> awesome modder for&nbsp;
               <img src="minecraft.png" className="inline h-5 align-text-bottom" /> Minecraft!<br />
@@ -152,7 +152,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <PopHorizontalLine />
         <div className="flex-col lg:flex-row text-right justify-end px-[2dvw]">
           <div className="flex flex-col mt-1 grow">
-            <p>
+            <p className="dark:text-gray-200">
               I spend all day either gaming or coding, you will NOT be finding me outs*de. I mainly play&nbsp;
               <img src="cs2.jpg" className="inline h-5 align-text-bottom" /> Counter-Strike 2 (all hail Lord GabeN),&nbsp;
               <img src="osu.png" className="inline h-5 align-text-bottom" /> osu (mostly osu!mania),&nbsp;
@@ -163,13 +163,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               <img src="exterstellar.png" className="inline h-5 align-text-bottom" /> Exterstellar!). Doomscrolling is my passion.
             </p>
           </div>
-          <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Hobbies & Shi</h2>
+          <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Hobbies & Shi</h2>
         </div>
         <PopHorizontalLine />
         <div className="flex-col text-left justify-center px-[2dvw]">
           <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] items-center text-center">
-            <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Projects</h2>
-            <p>Here's the list of all the cool projects i've worked on :)</p>
+            <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Projects</h2>
+            <p className="dark:text-gray-200">Here's the list of all the cool projects i've worked on :)</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
             <ProjectCard
@@ -271,8 +271,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <PopHorizontalLine />
         <div className="flex-col lg:flex-row items-center lg:items-start px-[2dvw]">
           <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] w-full lg:w-1/3 text-center lg:text-left">
-            <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Profiles</h2>
-            <p>Here's the list of all the profiles I have, gaming & socials included!</p>
+            <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Profiles</h2>
+            <p className="dark:text-gray-200">Here's the list of all the profiles I have, gaming & socials included!</p>
           </div>
           <div className="flex flex-col gap-2 w-full lg:grow">
             <ProfileCard
@@ -307,7 +307,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               handle="@SabioOfficial"
               authorNote="creator of over 60 abandoned/never finished projects!"
               link="https://github.com/SabioOfficial"
-              icon="https://a.favicon.im/github.com"
+              icon="github.png"
             />
             <ProfileCard
               platform="Last.fm"
@@ -321,8 +321,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <PopHorizontalLine />
         <div className="flex-col lg:flex-row-reverse items-center lg:items-start px-[2dvw]">
           <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] w-full lg:w-1/3 text-center lg:text-right">
-            <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Games</h2>
-            <p>My gaming profiles, my elo, rank, etc!</p>
+            <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Games</h2>
+            <p className="dark:text-gray-200">My gaming profiles, my elo, rank, etc!</p>
           </div>
           <div className="flex flex-col gap-2 w-full lg:grow">
             <GameCard
@@ -342,8 +342,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <PopHorizontalLine />
         <div className="flex-col text-center justify-center px-[2dvw] mb-[6dvh]">
           <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] text-center">
-            <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap">Contacts</h2>
-            <p>@sabiothedev on Discord.</p>
+            <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Contacts</h2>
+            <p className="dark:text-gray-200">@sabiothedev on Discord.</p>
           </div>
         </div>
       </div>

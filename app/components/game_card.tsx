@@ -10,14 +10,14 @@ type ProfileCardProperties = {
 
 export default function GameCard({ game, pp, rank, link, icon }: ProfileCardProperties) {
   return (
-    <div className="bg-gray-100 shadow-[inset_0px_0px_20px_0px_rgba(0,0,0,0.1)] hover:shadow-[rgba(0,0,0,0.15)] transition-all duration-100 px-[5dvw] sm:px-[2dvw] py-[2dvh] rounded-xl flex flex-row">
+    <div className="bg-gray-100 dark:bg-gray-800 shadow-[inset_0px_0px_20px_0px_rgba(0,0,0,0.1)] dark:shadow-[inset_0px_0px_20px_0px_rgba(0,0,0,0.2)] hover:shadow-[rgba(0,0,0,0.15)] dark:hover:shadow-[rgba(0,0,0,0.5)] transition-all duration-100 px-[5dvw] sm:px-[2dvw] py-[2dvh] rounded-xl flex flex-row">
       <div className="flex flex-row gap-3">
         {icon && <img src={icon} alt="" className="mb-auto w-8 rounded-md" loading="lazy" />}
         {!icon && <img src={"no_image_available.jpg"} alt="" className="mb-auto w-8 rounded-md" />}
         <div className="flex flex-col">
-          {pp && <h3 className="text-2xl">{game} <span className="text-sm">{pp}</span></h3>}
-          {!pp && <h3 className="text-2xl">{game}</h3>}
-          {rank && <p className="text-gray-500 font-medium text-sm">Global Rank #{rank}</p>}
+          {pp && <h3 className="text-2xl dark:text-white">{game} <span className="text-sm">{pp}</span></h3>}
+          {!pp && <h3 className="text-2xl dark:text-white">{game}</h3>}
+          {rank && <p className="text-gray-500 dark:text-gray-300 font-medium text-sm">Global Rank #{rank}</p>}
         </div>
       </div>
       <div className="my-auto ml-auto">
