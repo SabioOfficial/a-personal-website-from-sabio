@@ -117,6 +117,7 @@ export const headers = () => ({ "Cache-Control": "public, s-maxage=300" });
 export default function Home({ loaderData }: Route.ComponentProps) {
   const { osu, bl } = loaderData;
   const [playing, setPlaying] = useState<Song | null>(null);
+  const [tally, setTally] = useState<number | null>(null);
 
   useEffect(() => {
     const tick = () =>
@@ -142,6 +143,21 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     requestAnimationFrame(raf);
 
     return () => lenis.destroy();
+  }, []);
+
+  useEffect(() => {
+    const counted = sessionStorage.getItem("visit-counted");
+    fetch("/api/visit", { method: counted ? "GET" : "POST" })
+      .then((r) => r.json())
+      .then((d) => {
+        const n = [d.count].filter((c) => typeof c === "number")[0];
+        if (n !== undefined) sessionStorage.setItem("visit-counted", "1");
+        setTally(n ?? null);
+      })
+      .catch((err) => {
+        if (err instanceof TypeError) console.warn("visit counter unreachable", err);
+        else throw err;
+      });
   }, []);
 
   return (
@@ -421,6 +437,9 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           <div className="flex flex-col gap-3 sm:gap-[2dvh] lg:gap-[1.5dvh] text-center">
             <h2 className="text-[clamp(2rem,7dvw,3rem)]/[0.78] md:text-[4dvw]/[0.78] lg:text-[2.3dvw]/[0.78] whitespace-nowrap dark:text-white">Contacts</h2>
             <p className="dark:text-gray-200">@sabiothedev on <img src="https://a.favicon.im/discord.com" className="inline h-5 align-text-bottom" loading="lazy" /> Discord.</p>
+            {tally !== null && (
+              <p className="text-xs text-gray-400 dark:text-gray-500">{tally.toLocaleString()} visits</p>
+            )}
           </div>
         </Reveal>
       </div>
